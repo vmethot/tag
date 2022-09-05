@@ -8,7 +8,12 @@
    <h2>A Collaborative Text Area</h2>
    <textarea id="textarea"></textarea>
    <script type="text/javascript">
-     // See code snippets below
-   </script>
+      var domainUrl = "http://localhost:8000/api/realtime/convergence/default";
+        Convergence.connectAnonymously(domainUrl)
+          .then(initApp)
+          .catch((error) => {
+            console.log("Could not connect: " + error);
+          });
+    </script>
   </body>
 </html>
